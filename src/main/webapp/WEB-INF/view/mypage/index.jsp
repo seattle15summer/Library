@@ -20,7 +20,18 @@
     <div class="body">
       <div class="content">
         <p>自分の情報</p>
-        <p>借りている本		</p>
+        
+        <p>${remindMessage}</p>
+        
+        <p>名前</p><p>${userViewDto.name}</p>
+        <p>ふりがな</p><p>${userViewDto.nameKana}
+        <p>ステータス</p><p>${userViewDto.status}</p>
+        <p>本を借りた日</p><p>${userViewDto.borrowDay}</p>
+        <p>本の返却日</p><p>${userViewDto.returnDay}</p>
+        
+        
+        <p>借りている本</p>
+
         <p>パスワード変更</p>
       </div>
     </div>
