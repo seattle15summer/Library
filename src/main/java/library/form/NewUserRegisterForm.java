@@ -1,7 +1,5 @@
 package library.form;
 
-import java.sql.Timestamp;
-
 import org.seasar.struts.annotation.Mask;
 import org.seasar.struts.annotation.Maxlength;
 import org.seasar.struts.annotation.Msg;
@@ -23,28 +21,4 @@ public class NewUserRegisterForm {
 
 	/** メール */
 	public String mail;
-
-	/** 登録日時 */
-	public Timestamp resisterTime;
-
-	// =====================================================================
-	// ここから下は新規登録時はいらないかも？
-	// ========================================
-	/** 更新日 */
-	public Timestamp updateTime;
-
-	/** ステータス */
-	public boolean status;
-
-	/** 貸出日 */
-	public String borrowDay;
-
-	/** 返却日 */
-	public String returnDay;
-
-	/** リマインド？ */
-	public String remindDay;
-
-	/** 履歴 */
-	public Integer history;
 }

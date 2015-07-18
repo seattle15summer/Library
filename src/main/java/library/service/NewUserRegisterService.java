@@ -1,10 +1,10 @@
 package library.service;
 
-import org.seasar.extension.jdbc.service.S2AbstractService;
+import library.dto.NewUserRegisterDto;
+import library.entity.User;
+import library.form.NewUserRegisterForm;
 
-import parme.dto.NewUserRegisterDto;
-import parme.entity.User;
-import parme.form.NewUserRegisterForm;
+import org.seasar.extension.jdbc.service.S2AbstractService;
 
 public class NewUserRegisterService extends S2AbstractService<User> {
 
