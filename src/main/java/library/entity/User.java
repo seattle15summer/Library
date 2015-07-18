@@ -10,78 +10,52 @@ import javax.persistence.Id;
  */
 public class User {
 
-	/**
-	 * ユーザーID
-	 */
+	/** ユーザーID */
 	@Id
 	@GeneratedValue
 	@Column(name = "user_id")
 	public Integer userId;
 
-	/**
-	 * 名前
-	 */
+	/** 名前 */
 	public String name;
 
-	/**
-	 * 名前（カナ）
-	 */
+	/** 名前（カナ） */
 	@Column(name = "name_kana")
 	public String nameKana;
 
-	/**
-	 * パスワード
-	 */
+	/** パスワード */
 	public String password;
 
-	/**
-	 * メールアドレス
-	 */
+	/** メールアドレス */
 	public String mail;
 
-	/**
-	 * 登録日
-	 */
+	/** 登録日 */
 	@Column(name = "register_day")
 	public String registerDay;
 
-	/**
-	 * 更新日
-	 */
+	/** 更新 */
 	@Column(name = "update_day")
 	public String updateDay;
 
-	/**
-	 * ステータス 0:借りている 1:かりていない
-	 */
+	/** ステータス 0:借りている 1:借りていない */
 	public Boolean status;
 
-	/**
-	 * 借りた日
-	 */
+	/** 借りた日 */
 	@Column(name = "borrow_day")
 	public String borrowDay;
 
-	/**
-	 * 返却予定日
-	 */
+	/** 返却予定日 */
 	@Column(name = "return_day")
 	public String returnDay;
 
-	/**
-	 * リマインド日
-	 */
+	/** リマインド日 */
 	@Column(name = "remind_day")
 	public String remindDay;
 
-	/**
-	 * 利用回数
-	 */
+	/** 利用回数 */
 	public Integer history;
 
-	/**
-	 * 本のID
-	 */
+	/** 本のID */
 	@Column(name = "book_id")
 	public Integer bookId;
 
