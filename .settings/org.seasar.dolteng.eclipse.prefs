@@ -1,0 +1,8 @@
+DaoType=S2JDBC
+DefaultResourcePath=/Library/src/main/resources
+DefaultRootPackage=library
+DefaultSrcPath=/Library/src/main/java
+ServletPath=/Library
+ViewType=SA-Struts
+WebContentsRoot=src/main/webapp/
+eclipse.preferences.version=1
