@@ -1,0 +1,45 @@
+@CHARSET "UTF-8";
+
+@CHARSET "UTF-8";
+
+.header {
+  border: 1px solid #a0a0a0;
+  width: 604px;
+  height: 35px;
+}
+.header .logo {
+  margin: 5px;
+  font: 25px Helvetica;
+  color: #a0a0a0;
+  text-align: center;
+}
+.body {
+  border: 1px solid #a0a0a0;
+  width: 604px;
+  height: 600px;
+}
+.body .leftnav {
+  float: left;
+  border: 1px solid #a0a0a0;
+  width: 150px;
+  height: 600px;
+}
+.body .leftnav li {
+  list-style: none;
+}
+.body .content {
+  float: left;
+  border: 1px solid #a0a0a0;
+  width: 450px;
+  height: 600px;
+}
+.footer {
+  border: 1px solid #a0a0a0;
+  width: 604px;
+  height: 30px;
+}
+.footer .rights {
+  text-align: center;
+  color: #a0a0a0;
+  font-size: 5px;
+}
