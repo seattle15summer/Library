@@ -45,6 +45,20 @@
 
   <component name="formCustomizer" class="org.seasar.framework.container.customizer.CustomizerChain"/>
   <component name="actionCustomizer" class="org.seasar.framework.container.customizer.CustomizerChain">
+    <initMethod name="addCustomizer">
+      <arg>
+        <component class="org.seasar.framework.container.customizer.AspectCustomizer">
+          <property name="interceptorName">"userLoginInterceptor"</property>
+          <!--<property name="pintcut">".*"</property>-->
+          <property name="useLookupAdapter">true</property>
+             <!-- 処理の対象外にしたいAction -->
+             <initMethod name="addIgnoreClassPattern">
+               <arg>"library.action"</arg>
+               <arg>"UserLoginAction"</arg>
+             </initMethod>
+        </component>
+      </arg>
+    </initMethod>
     <initMethod name="addAspectCustomizer">
       <arg>"actionMessagesThrowsInterceptor"</arg>
     </initMethod>
@@ -53,7 +67,7 @@
     </initMethod>
     <initMethod name="addCustomizer">
       <arg>
-        <component class="org.seasar.framework.container.customizer.TxAttributeCustomizer"/>
+        <component class="org.seasar.framework.container.customizer.AspectCustomizer"/>
       </arg>
     </initMethod>
     <initMethod name="addCustomizer">
