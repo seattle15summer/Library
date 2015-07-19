@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import library.dto.UserInfoDto;
 import library.dto.UserViewDto;
 
 import org.seasar.extension.jdbc.service.S2AbstractService;
@@ -115,6 +116,14 @@ public class MyPageService extends S2AbstractService<User>{
         
         	return remindMessage;
         }
+	}
+	
+	public void userupdatePassword(User user,UserInfoDto userInfoDto, String password) {
+		
+		user.password = password;
+		userInfoDto.password = password;
+		update(user);
+		
 	}
 	
 	/**
