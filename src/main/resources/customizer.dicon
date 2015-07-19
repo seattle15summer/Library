@@ -53,10 +53,6 @@
             <arg>"library.action"</arg>
             <arg>"UserLoginAction"</arg>
           </initMethod>
-          <initMethod name="addIgnoreClassPattern">
-            <arg>"library.action"</arg>
-            <arg>"AdminLoginAction"</arg>
-          </initMethod>
         </component>
       </arg>
     </initMethod>
