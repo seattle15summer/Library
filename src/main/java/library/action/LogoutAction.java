@@ -15,7 +15,7 @@ public class LogoutAction {
 	@Execute(validator = false)
 	@RemoveSession(name = "userInfoDto")
 	public String logout() {
-		return "/login?redirect=true";
+		return "/userLogin?redirect=true";
 	}
 	
 }
