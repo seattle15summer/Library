@@ -40,15 +40,19 @@ public class AdminLoginAction {
 	/**
 	 * ログイン判定
 	 * 
-	 * @return　 　成功ならマイページへ 　失敗ならログイン画面へ遷移
+	 * @return　成功ならマイページへ 　失敗ならログイン画面へ遷移
 	 */
 	@Execute(validator = false, input = "index?redirect=true", removeActionForm = true)
-	public String judgeLogin() {
-		 adminInfoDto.mail = adminLoginForm.mail;
-		 adminInfoDto.password = adminLoginForm.password;
-		 if(adminLoginService.isAdminExist(adminInfoDto.mail,
-		 adminInfoDto.password)){
-		return "/adminTop/index?redirect=true";
+	public String judgeAdminLogin() {
+
+		if (adminLoginService.isAdminExist(adminInfoDto.mail,
+				adminInfoDto.password)) {
+
+			adminInfoDto.mail = adminLoginForm.mail;
+			adminInfoDto.password = adminLoginForm.password;
+
+			return "/adminTop/index?redirect=true";
+		}
+		return "index.jsp";
 	}
-	 return "index.jsp";
 }
