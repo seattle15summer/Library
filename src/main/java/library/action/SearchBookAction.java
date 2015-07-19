@@ -3,6 +3,12 @@
  */
 package library.action;
 
+import javax.annotation.Resource;
+
+import library.form.SearchBookForm;
+import library.service.SearchBookService;
+
+import org.seasar.struts.annotation.ActionForm;
 import org.seasar.struts.annotation.Execute;
 
 /**
@@ -11,9 +17,18 @@ import org.seasar.struts.annotation.Execute;
  */
 public class SearchBookAction {
 	
+	@ActionForm
+	@Resource
+	public SearchBookForm searchBookForm;
+	
+	@Resource
+	public SearchBookService searchBookService;
+	
 	@Execute(validator = false)
-	public String indexx(){
+	public String index(){
 		return "index.jsp";
 	}
+	
+	
 	
 }
