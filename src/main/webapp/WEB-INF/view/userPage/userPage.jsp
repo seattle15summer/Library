@@ -11,7 +11,7 @@
 
 <div class="header">
 	<div class="logo">Liberty & Library</div>
-	<div class="logout"><a href "${f:url("logOut")}">ログアウト</a></div>
+	<div class="logout"><a href "${f:url("logout")}">ログアウト</a></div>
 </div>
 
 
@@ -21,13 +21,13 @@
 	<div class="main">
 		<div class="leftnav">
 		<ul>
-			<li> <a href="">トップ画面</a></li>
+			<li><label> <a href="">トップ画面</a></label></li>
 			<li> <a href="${f:url("searchBook")}">本の検索</a></li>
 			<li> <a href="${f:url("myPage")}">マイページ</a></li>
 		</ul>
 		</div>
 		<div class="content">
-			<a href="/"><img src="../img/eyecatch.jpg" width="450" height="300"/></a>
+			<a href="/"><img src="../img/eyecatch.jpg" width="500" height="375"/></a>
 		</div>
 	</div>
 </div>
