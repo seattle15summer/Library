@@ -30,7 +30,7 @@ public class MyPageService extends S2AbstractService<User>{
 	public User getUserbyUserInfo(String mail, String password) {
 		
 		//取得したユーザー情報を返します
-		return select().where(new SimpleWhere().eq("mail", mail).eq("password", password))
+		return select().where(new SimpleWhere().eq("mail", mail),new SimpleWhere().eq("password", password))
 		.getSingleResult();
 	}
 	
@@ -39,15 +39,27 @@ public class MyPageService extends S2AbstractService<User>{
 	 * @param user ユーザー情報を格納するエンティティ
 	 * @param userViewDto ユーザー情報を格納するDto
 	 */
-	public void createMyPageViewDto(User user, UserViewDto userViewDto) {
+	public void createUserViewDto(User user, UserViewDto userViewDto) {
 		
 		userViewDto.name = user.name;
 		userViewDto.nameKana = user.nameKana;
-		userViewDto.borrowDay = user.borrowDay;
-		userViewDto.returnDay = user.returnDay;
 		userViewDto.history = user.history;
 		userViewDto.bookId = user.bookId;
+
 	    userViewDto.status = setStatus(user.status);
+	    //本を借りていない場合,「ー」を表示
+	    if(user.borrowDay == null) {
+	    	userViewDto.borrowDay = "ー";
+	    } else {
+	    	userViewDto.borrowDay = user.borrowDay;
+	    }
+	    
+	    if(user.returnDay == null) {
+	    	userViewDto.returnDay = "ー";
+	    } else {
+	    	userViewDto.returnDay = user.returnDay;
+	    }
+	   
 	}
 	
 	/**
@@ -61,9 +73,9 @@ public class MyPageService extends S2AbstractService<User>{
 		
 		//ステータスごとに表示する内容を変える
 		if(status == true) {
-			strStatus = "本を借りている";
+			strStatus = "今本を借りています";
 		} else if(status == false) {
-			strStatus = "本を借りていない";
+			strStatus = "今本を借りていません";
 		} else {
 			//TODO
 			//エラーハンドリング
@@ -81,22 +93,29 @@ public class MyPageService extends S2AbstractService<User>{
 
 		String remindMessage = null;
 		
-        // DBから取得した値をDate型に変換
-        Date remindDate = DateFormat.getDateInstance().parse(remindDay);
+        if(remindDay == null || returnDay == null) {
+        	remindMessage = "";
+        	return remindMessage;
+        } else {
+        	
+        	// DBから取得した値をDate型に変換
+            Date remindDate = DateFormat.getDateInstance().parse(remindDay);
+            
+            Date returnDate = DateFormat.getDateInstance().parse(returnDay);
+            
+            //今日の日付を取得
+            Date today = new Date();
         
-        Date returnDate = DateFormat.getDateInstance().parse(returnDay);
+        	//リマインド日近いかつ本返してない
+        	if(remindDate.compareTo(today) == -1 && status == true) {
+        		remindMessage = "本の期限が迫っています";
+        	} else if(returnDate.compareTo(today) == -1 && status == true) {
+        		remindMessage = "本の締め切りが過ぎています";
+        	} 
         
-        //今日の日付を取得
-        Date today = new Date();
-        
-        //リマインド日近いかつ本返してない
-        if(remindDate.compareTo(today) == -1 && status == true) {
-        	remindMessage = "本の期限が迫っています";
-        } else if(returnDate.compareTo(today) == -1 && status == true) {
-        	remindMessage = "本の締め切りが過ぎています";
-        } 
-        
-        return remindMessage;
+        	return remindMessage;
+        }
 	}
-}
+	
+ }
 	

@@ -9,9 +9,9 @@
 <body>
 <p>this is Admin login</p>
 <s:form method="POST" >
-	メールアドレス：<input type="email" property="mail"><html:errors property="mail"/></br>
-	パスワード:<input type="password" property="password"><html:errors property="password"/></br>
-	<input type="submit" name="login" value="ログイン">
+	メールアドレス：<input type="mail" name="mail"><html:errors property="mail"/>
+	パスワード:<input type="password" name="password"><html:errors property="password"/>
+	<input type="submit" name="judgeAdminLogin" value="ログイン">
 </s:form>
 </body>
 </html>

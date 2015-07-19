@@ -10,26 +10,32 @@ import org.seasar.extension.jdbc.service.S2AbstractService;
 import org.seasar.extension.jdbc.where.SimpleWhere;
 
 /**
- * 管理ログイン用サービスクラス.
+ * 管理者ログイン用サービスクラス.
  * @author andoharuka
  */
 public class AdminLoginService extends S2AbstractService<Admin>{
 	
-	/** 管理者の有無判定 */
+	/** ユーザーの有無判定 */
 	public boolean isAdminExist(String mail, String password) {
 		AdminInfoDto adminInfoDto = getAdminInfoDto(mail);
 		return (mail.equals(adminInfoDto.mail) && password.equals(adminInfoDto.password));
 	}
-	/** db から管理者情報を取得する */
+	
+	/** db からユーザーを取得する */
 	private AdminInfoDto getAdminInfoDto(String mail) {
 		
 		Admin adminEntity = select().where(new SimpleWhere().eq("mail", mail)).getSingleResult();
-		
+		if (adminEntity == null){
+			AdminInfoDto illegalAdminDto = new AdminInfoDto();
+			illegalAdminDto.mail = "illegal";
+			illegalAdminDto.password = "illegal";
+			return illegalAdminDto;
+		}
 		AdminInfoDto adminInfoDto = createAdminInfoDto(adminEntity);
 		
 		return adminInfoDto;
 	}
-	/**　ユーザー情報を記録 */
+	/**　ユーザー情報を格納	 */
 	private AdminInfoDto createAdminInfoDto(Admin adminEntity) {
 		AdminInfoDto adminInfoDto = new AdminInfoDto();
 		adminInfoDto.mail = adminEntity.mail;

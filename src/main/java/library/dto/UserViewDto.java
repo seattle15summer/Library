@@ -3,9 +3,6 @@
  */
 package library.dto;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
 /**
  * @author nagaimidori
@@ -77,6 +74,15 @@ public class UserViewDto {
 	 * 本のID
 	 */
 	public Integer bookId;
-
+	
+	/**
+	 * リマインドメッセージ
+	 */
+	public String remindMessage;
+	
+	/**
+	 * 借りた本の名前
+	 */
+	public String lendBookName;
 	
 }
