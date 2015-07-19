@@ -29,12 +29,14 @@ public class SearchBookAction {
 	
 	public BookDto bookDto;
 	
+	//前のページがあるか
+	public boolean hasNext = false;
+
+	//次のページがあるか
+	public boolean hasPrev = false;
+	
 	//総件数
 	public long total;
-	
-	public boolean hasNext;
-	
-	public boolean hasPrev;
 	
 	@Execute(validator = false)
 	public String index(){
