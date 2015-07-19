@@ -14,7 +14,7 @@
       <ul>
         <li> <a href="../">トップ画面</a></li>
         <li> <a href="">本の検索</a></li>
-        <li> <a href="../mypage">マイページ</a></li>
+        <li> <a href="../myPage">マイページ</a></li>
       </ul>
     </div>
     <div class="body">
