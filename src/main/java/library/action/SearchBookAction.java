@@ -27,6 +27,8 @@ public class SearchBookAction {
 	@Resource
 	public SearchBookService searchBookService;
 	
+	public BookDto bookDto;
+	
 	//総件数
 	public long total;
 	
@@ -41,7 +43,7 @@ public class SearchBookAction {
 	
 	/** 検索 */
 	@Execute(validator = false)
-	public String searchBookInf(){
+	public String searchBookInfo(){
 		
 		int page = IntegerConversionUtil.toPrimitiveInt(this.searchBookForm.page);
 		
@@ -56,8 +58,8 @@ public class SearchBookAction {
 		   hasNext = true;
 		}
 				
-		BookDto bookDto = searchBookService.searchBookInf(searchBookForm.searchText);
-		return "";
+		bookDto = searchBookService.searchBookInfo(searchBookForm.searchText);
+		return "list.jsp";
 	}
 	
 }

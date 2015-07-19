@@ -21,7 +21,7 @@ import org.seasar.extension.jdbc.service.S2AbstractService;
 public class SearchBookService extends S2AbstractService<Bookinfo> {
 	
 	/** 検索ワードに当てはまる本をデーターベースから取得する  */
-	public BookDto searchBookInf(String searchText) {
+	public BookDto searchBookInfo(String searchText) {
 		List<String> searchWordList = splitText(searchText);
 		List<Bookinfo> searchResult = findBookInfoByWords(searchWordList);
 		BookDto bookInfDto = createSearchDto(searchResult);

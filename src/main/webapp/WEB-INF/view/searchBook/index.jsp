@@ -19,21 +19,10 @@
     </div>
     <div class="body">
       <div class="content">
-        <p>書籍を検索します</p>
-         タイトル：<input name="searchText" type="text"/>
-        <input type="submit" name="searchBookInf" value="検索">
-        <div class="listTable">
-          <table border="1">
-            <thead>
-              <tr>
-                <th>表紙</th>
-                <th>題名</th>
-                <th>貸出状況</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
+        <s:form>
+         タイトル：<input name="searchText" type="text" placeholder="本のタイトルを入力"/>
+        <input type="submit" name="searchBookInfo" value="検索">
+        </s:form>
       </div>
     </div>
     <div class="footer">
