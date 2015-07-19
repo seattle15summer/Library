@@ -45,12 +45,12 @@ public class AdminLoginAction {
 	@Execute(validator = false, input = "index?redirect=true", removeActionForm = true)
 	public String judgeAdminLogin() {
 
-		if (adminLoginService.isAdminExist(adminInfoDto.mail,
-				adminInfoDto.password)) {
-
+		
+		if(adminLoginService.isAdminExist(adminLoginForm.mail, adminLoginForm.password)){
+			
 			adminInfoDto.mail = adminLoginForm.mail;
-			adminInfoDto.password = adminLoginForm.password;
-
+			adminInfoDto.password = adminInfoDto.password;
+			
 			return "/adminTop/index?redirect=true";
 		}
 		return "index.jsp";
