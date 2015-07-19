@@ -23,16 +23,26 @@
         
         <p>${remindMessage}</p>
         
-        <p>名前</p><p>${userViewDto.name}</p>
-        <p>ふりがな</p><p>${userViewDto.nameKana}
-        <p>ステータス</p><p>${userViewDto.status}</p>
-        <p>本を借りた日</p><p>${userViewDto.borrowDay}</p>
-        <p>本の返却日</p><p>${userViewDto.returnDay}</p>
+        <p>名前：${userViewDto.name}</p>
+        <p>ふりがな：${userViewDto.nameKana}
         
+        <p>${userViewDto.status }</p>
         
+        <p>本を借りた日：${userViewDto.borrowDay}</p>
+        <p>本を返す日：${userViewDto.returnDay}</p>
+        
+        <c:if test="${!empty userViewDto.bookId}" var="flg" />
+		<c:if test="${flg}">
         <p>借りている本</p>
-
+        <p>名前：${bookDto.title}</p>
+		<p>作者：${bookDto.author}</p>
+		<p>カテゴリー：${bookDto.category}</p>
+		<p>出版社：${bookDto.publisher}</p>
+		</c:if>
+		
         <p>パスワード変更</p>
+        
+        <p></p>
       </div>
     </div>
     <div class="footer">
