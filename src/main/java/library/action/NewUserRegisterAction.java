@@ -78,6 +78,12 @@ public class NewUserRegisterAction {
 		return "registerInput.jsp";
 	}
 
+	//トップページを表示するメソッド
+	@Execute(validator=false)
+	public String goTop(){
+		return "/userPage/index?redirect=true";
+	}
+
 	/**
 	 * ワンタイムトークン
 	 * @return
