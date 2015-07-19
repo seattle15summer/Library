@@ -17,7 +17,7 @@ import library.dto.UserInfoDto;
  * @author masayukitooyama
  *
  */
-public class LoginInterceptor extends AbstractInterceptor {
+public class UserLoginInterceptor extends AbstractInterceptor {
 	
 	private static final long serialVersionUID = 1L;
 	
