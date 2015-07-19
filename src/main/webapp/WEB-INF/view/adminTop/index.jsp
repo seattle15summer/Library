@@ -17,6 +17,7 @@
       </ul>
     </div>
     <div class="body">
+    <a href='${f:url("/adminLogout")}'>ログアウト</a>
     </div>
     <div class="footer">
       <div class="rights">
