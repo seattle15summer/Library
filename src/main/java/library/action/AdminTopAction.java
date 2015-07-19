@@ -6,15 +6,14 @@ package library.action;
 import org.seasar.struts.annotation.Execute;
 
 /**
- * 管理者情報表示用アクションクラス.
+ * 管理者用トップページアクション.
  * 
  * @author andoharuka
  */
-public class ShowAdminInfoAction {
+public class AdminTopAction {
 
 	@Execute(validator = false)
 	public String index() {
 		return "index.jsp";
-
 	}
 }

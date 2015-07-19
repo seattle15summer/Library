@@ -45,6 +45,21 @@
 
   <component name="formCustomizer" class="org.seasar.framework.container.customizer.CustomizerChain"/>
   <component name="actionCustomizer" class="org.seasar.framework.container.customizer.CustomizerChain">
+    <initMethod name="addCustomizer">
+      <arg>
+        <component class="org.seasar.framework.container.customizer.AspectCustomizer">
+          <property name="interceptorName">"loginInterceptor"</property>
+          <initMethod name="addIgnoreClassPattern">
+            <arg>"library.action"</arg>
+            <arg>"UserLoginAction"</arg>
+          </initMethod>
+          <initMethod name="addIgnoreClassPattern">
+            <arg>"library.action"</arg>
+            <arg>"AdminLoginAction"</arg>
+          </initMethod>
+        </component>
+      </arg>
+    </initMethod>
     <initMethod name="addAspectCustomizer">
       <arg>"actionMessagesThrowsInterceptor"</arg>
     </initMethod>
@@ -53,7 +68,7 @@
     </initMethod>
     <initMethod name="addCustomizer">
       <arg>
-        <component class="org.seasar.framework.container.customizer.TxAttributeCustomizer"/>
+        <component class="org.seasar.framework.container.customizer.AspectCustomizer"/>
       </arg>
     </initMethod>
     <initMethod name="addCustomizer">
