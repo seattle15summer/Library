@@ -22,7 +22,7 @@ public class SearchBookAction {
 	
 	@ActionForm
 	@Resource
-	protected SearchBookForm searchBookForm;
+	public SearchBookForm searchBookForm;
 
 	@Resource
 	public SearchBookService searchBookService;

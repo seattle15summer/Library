@@ -13,11 +13,12 @@ import library.entity.Bookinfo;
 
 import org.seasar.extension.jdbc.service.S2AbstractService;
 
+
 /**
  * @author masayukitooyama
  *
  */
-public class SearchBookService extends S2AbstractService {
+public class SearchBookService extends S2AbstractService<Bookinfo> {
 	
 	/** 検索ワードに当てはまる本をデーターベースから取得する  */
 	public BookDto searchBookInf(String searchText) {
@@ -81,10 +82,22 @@ public class SearchBookService extends S2AbstractService {
 	private boolean isSeachTextNotNull(List<String> searchWordList) {
 		return (!(searchWordList.isEmpty())) ? true : false;
 	}
-
+	
+	/** 
+	 * 取得したエンティティを Dto に入れる処理 
+	 */
 	private BookDto createSearchDto(List<Bookinfo> searchResult) {
-		// TODO Auto-generated method stub
-		return null;
+		BookDto searchBookInfoDto = new BookDto();
+		
+		for (Bookinfo bookInfo : searchResult) {
+			BookDto bookDisp = new BookDto(
+					bookInfo.bookId, bookInfo.title,
+					bookInfo.author, bookInfo.category,
+					bookInfo.publisher);
+			searchBookInfoDto.bookInfoDtos.add(bookDisp);
+		}
+
+	return searchBookInfoDto;
 	}
 	
 	/**

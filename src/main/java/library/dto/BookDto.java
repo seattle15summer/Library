@@ -3,12 +3,28 @@
  */
 package library.dto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author nagaimidori
  *
  */
 public class BookDto {
 	
+	public BookDto(Integer bookId, String title, String author,
+			String category, String publisher) {
+		this.bookId = bookId;
+		this.title = title;
+		this.author = author;
+		this.category = category;
+		this.publisher = publisher;
+	}
+
+	public BookDto() {
+	}
+	
+	public List<BookDto> bookInfoDtos = new ArrayList<>();
 	/** 本のID */
 	public Integer bookId;
 
