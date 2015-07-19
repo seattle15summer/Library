@@ -8,6 +8,10 @@
 </head>
 <body>
 <p>this is Admin login</p>
-
+<s:form method="POST" >
+	メールアドレス：<input type="email" property="mail"><html:errors property="mail"/></br>
+	パスワード:<input type="password" property="password"><html:errors property="password"/></br>
+	<input type="submit" name="login" value="ログイン">
+</s:form>
 </body>
 </html>
