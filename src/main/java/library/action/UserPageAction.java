@@ -29,4 +29,9 @@ public class UserPageAction {
 		return "/searchBook/index?redirect=true";
 	}	
 	
+	//searchBookに遷移するメソッド
+	@Execute(validator=false)
+	public String logout(){
+		return "/logout/index?redirect=true";
+	}
 }
