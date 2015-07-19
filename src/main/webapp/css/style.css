@@ -45,6 +45,7 @@ p,a,ul,li,tr,th,button {
 	margin: 2px;
 	float: right;
 	width: 60px;
+	border-bottom: 1px dashed #2090e0;
 }
 
 /*------------------------------
@@ -66,12 +67,13 @@ p,a,ul,li,tr,th,button {
 .main .leftnav {
 	background-color: #fff;
 	float: left;
-	border: 1px solid #a0a0a0;
+	/* border: 1px solid #a0a0a0; */
 	width: 150px;
 	height: 450px;
 	margin: 10px 40px 0 40px;
 	margin-top: 10px;
 	margin-right: 40px;
+	background-color: #fffff0;
 }
 .main .leftnav li {
 	list-style: none;
@@ -83,10 +85,11 @@ p,a,ul,li,tr,th,button {
 	padding: 20px ;
 	background-color: #fff;
 	float: left;
-	border: 1px solid #a0a0a0;
+	/* border: 1px solid #a0a0a0; */
 	width: 500px;
 	height: 80%;
 	margin: 10px;
+	background-color: #fffff0;
 }
 
 /*------------------------------

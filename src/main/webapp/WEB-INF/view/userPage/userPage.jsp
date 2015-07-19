@@ -21,7 +21,7 @@
 	<div class="main">
 		<div class="leftnav">
 		<ul>
-			<li><label> <a href="">トップ画面</a></label></li>
+			<li> <a href="">トップ画面</a></li>
 			<li> <a href="${f:url("searchBook")}">本の検索</a></li>
 			<li> <a href="${f:url("myPage")}">マイページ</a></li>
 		</ul>
