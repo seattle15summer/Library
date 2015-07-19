@@ -76,7 +76,8 @@ p,a,ul,li,tr,th,button {
 .main .leftnav li {
 	list-style: none;
 	text-align: center;
-	margin: 5px;
+	margin: 8px;
+	border-bottom: 1px dotted #333;
 }
 .main .content {
 	padding: 20px ;
