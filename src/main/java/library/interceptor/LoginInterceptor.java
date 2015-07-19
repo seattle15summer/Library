@@ -4,9 +4,11 @@
 package library.interceptor;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.aopalliance.intercept.MethodInvocation;
 import org.seasar.framework.aop.interceptors.AbstractInterceptor;
+import org.seasar.framework.container.factory.SingletonS2ContainerFactory;
 import org.seasar.struts.annotation.Execute;
 
 import library.dto.UserInfoDto;
@@ -15,7 +17,7 @@ import library.dto.UserInfoDto;
  * @author masayukitooyama
  *
  */
-public class UserLoginInterceptor extends AbstractInterceptor {
+public class LoginInterceptor extends AbstractInterceptor {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -31,8 +33,8 @@ public class UserLoginInterceptor extends AbstractInterceptor {
 		//ここの条件がtrueならログイン成功
 		//ここの条件がfalseなら未ログインでログインページへ移動
 
-		return (!isExecuteMethod(invocation) || isLoggedIn()) ?
-				invocation.proceed() : "/login?redirect=true" ;
+		return (!isExecuteMethod(invocation) || isLoggedIn()) 
+				? invocation.proceed() : "/userLogin?redirect=true" ;
 
 	}
 
@@ -40,9 +42,15 @@ public class UserLoginInterceptor extends AbstractInterceptor {
 		return invocation.getMethod().isAnnotationPresent(Execute . class);
 	}
 
-	private boolean isLoggedIn() {
-        // Sessionにユーザー情報が登録されているかチェック
-        return (userInfoDto != null && userInfoDto .password != null);
-    }
-	
+	 private boolean isLoggedIn() {
+	        HttpSession session =
+	            (HttpSession) SingletonS2ContainerFactory
+	                .getContainer()
+	                .getExternalContext()
+	                .getSession();
+	        
+	        UserInfoDto dto = (UserInfoDto) session.getAttribute("userInfoDto");
+	        
+	        return (userInfoDto != null && userInfoDto.mail != null);
+	 }
 }
