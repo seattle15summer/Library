@@ -7,9 +7,6 @@ import library.dto.NewUserRegisterDto;
 import library.form.NewUserRegisterForm;
 import library.service.NewUserRegisterService;
 
-import org.apache.struts.action.ActionMessage;
-import org.apache.struts.action.ActionMessages;
-import org.apache.struts.util.TokenProcessor;
 import org.seasar.framework.aop.annotation.RemoveSession;
 import org.seasar.struts.annotation.ActionForm;
 import org.seasar.struts.annotation.Execute;
@@ -26,7 +23,7 @@ public class NewUserRegisterAction {
 	@Resource
 	protected HttpServletRequest request;
 
-	NewUserRegisterDto  newUserRegisterDto;
+	public NewUserRegisterDto  newUserRegisterDto;
 
 	/**
 	 * 新規登録入力フォーム
@@ -34,7 +31,7 @@ public class NewUserRegisterAction {
 	 */
 	@Execute(validator = false)
 	public String index() {
-		TokenProcessor.getInstance().saveToken(request);
+		//TokenProcessor.getInstance().saveToken(request);
 		return "registerInput.jsp";
 	}
 
@@ -42,7 +39,7 @@ public class NewUserRegisterAction {
 	 * 新規登録確認画面へ
 	 * @return
 	 */
-	@Execute(validator = false)
+	@Execute(validator = true, input = "resisterInput.jsp")
 	public String goRegisterConfirm() {
 
 		newUserRegisterDto.name         = newUserRegisterForm.name;
@@ -59,7 +56,7 @@ public class NewUserRegisterAction {
 	 */
 	@Execute(validator = false)
 	@RemoveSession(name = "newUserRegisterDto")
-	public String goResisterConpleted() {
+	public String goRegisterCompleted() {
 
 		newUserRegisterService.insert(newUserRegisterDto);
 
@@ -85,6 +82,7 @@ public class NewUserRegisterAction {
 	 * ワンタイムトークン
 	 * @return
 	 */
+	/*
 	public ActionMessages validate() {
 		ActionMessages errors = new ActionMessages();
 		if (!TokenProcessor.getInstance().isTokenValid(request, true)) {
@@ -94,4 +92,5 @@ public class NewUserRegisterAction {
 		}
 		return errors;
 	}
+	*/
 }

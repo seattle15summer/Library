@@ -15,7 +15,7 @@
   <dl>
     <dt>名前</dt>
       <dd>
-      <input type="text" name="name value="${newUserRegisterForm.name}" placeholder="名前"/>
+      <input type=text name="name" value="${newUserRegisterForm.name}" placeholder="名前"/>
       </dd>
   </dl>
   <dl>

@@ -8,7 +8,7 @@ public class NewUserRegisterForm {
 
 	/** 名前 漢字 */
 	@Maxlength(maxlength=100)
-	@Mask(mask = "^[^ -~｡-ﾟ]*$", msg = @Msg(key = "errors.fullWidth"))
+	//@Mask(mask = "^[^ -~｡-ﾟ]*$", msg = @Msg(key = "errors.fullWidth"))
 	public String name;
 
 	/** 名前 フリガナ */

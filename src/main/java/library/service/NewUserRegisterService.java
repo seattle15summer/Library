@@ -12,8 +12,10 @@ public class NewUserRegisterService extends S2AbstractService<User> {
 
 	public int insert(NewUserRegisterDto newUserRegisterDto) {
 		User entity = new User();
-		// entitiyがカプセル化してあってメンドイけど
-		// カプセル化したままでいきます？
+		entity.name     = newUserRegisterDto.name;
+		entity.nameKana = newUserRegisterDto.nameKana;
+		entity.password = newUserRegisterDto.password;
+		entity.mail     = newUserRegisterDto.mail;
 		return insert(entity);
 	}
 }
