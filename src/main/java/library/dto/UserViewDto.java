@@ -16,9 +16,6 @@ public class UserViewDto {
 	/**
 	 * ユーザーID
 	 */
-	@Id
-	@GeneratedValue
-	@Column(name = "user_id")
 	public Integer userId;
 
 	/**
