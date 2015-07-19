@@ -48,7 +48,7 @@
     <initMethod name="addCustomizer">
       <arg>
         <component class="org.seasar.framework.container.customizer.AspectCustomizer">
-          <property name="interceptorName">"loginInterceptor"</property>
+          <property name="interceptorName">"userLoginInterceptor"</property>
           <initMethod name="addIgnoreClassPattern">
             <arg>"library.action"</arg>
             <arg>"UserLoginAction"</arg>
