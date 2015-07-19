@@ -11,7 +11,7 @@ html, body {
 body {
   background-color: #e0e0e0;
 }
-p,a,ul,li,tr,th {
+p,a,ul,li,tr,th,button {
   text-decoration: none;
   color: #2090e0;
   margin: 0;
@@ -34,10 +34,17 @@ p,a,ul,li,tr,th {
 	top: 0px;
 }
 .header .logo {
-	margin: 5px;
 	font: 25px Helvetica;
 	color: #eee;
-	text-align: center;
+	width: 190px;
+	margin: 5px auto;
+}
+.header .logout {
+	font: 12px Helvetica;
+	color: #000;
+	margin: 2px;
+	float: right;
+	width: 60px;
 }
 
 /*------------------------------
@@ -63,6 +70,8 @@ p,a,ul,li,tr,th {
 }
 .main .leftnav li {
 	list-style: none;
+	text-align: center;
+	margin: 3px;
 }
 .main .content {
 	float: left;
