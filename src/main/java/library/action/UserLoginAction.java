@@ -48,7 +48,7 @@ public class UserLoginAction {
 		if(userLoginService.isUserExist(userLoginForm.mail, userLoginForm.password)){
 			
 			userInfoDto.mail = userLoginForm.mail;
-			userInfoDto.password = userInfoDto.password;
+			userInfoDto.password = userLoginForm.password;
 			
 			return "/userPage/index?redirect=true";
 		}
