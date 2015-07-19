@@ -1,45 +1,65 @@
 @CHARSET "UTF-8";
 
-@CHARSET "UTF-8";
+html, body {
+	height: 100%;
+	margin: 0;
+}
 
 .header {
-  border: 1px solid #a0a0a0;
-  width: 604px;
-  height: 35px;
+	background-color: #614D9D;	
+	border: 1px solid ;
+	width: 100%;
+	height: 40px;
+	position: absolute;
+	top: 0px;
 }
 .header .logo {
-  margin: 5px;
-  font: 25px Helvetica;
-  color: #a0a0a0;
-  text-align: center;
+	margin: 5px;
+	font: 25px Helvetica;
+	color: #eee;
+	text-align: center;
 }
-.body {
-  border: 1px solid #a0a0a0;
-  width: 604px;
-  height: 600px;
+.wrapper {
+	width: 100%;
 }
-.body .leftnav {
-  float: left;
-  border: 1px solid #a0a0a0;
-  width: 150px;
-  height: 600px;
+.main {
+	padding-bottom: 30px;
+	width: 604px;
+	height: auto;
+	height: 90%;
+	margin: 40px auto;
 }
-.body .leftnav li {
-  list-style: none;
+.main .leftnav {
+	float: left;
+	border: 1px solid #a0a0a0;
+	width: 150px;
+	height: 80%;
 }
-.body .content {
-  float: left;
-  border: 1px solid #a0a0a0;
-  width: 450px;
-  height: 600px;
+.main .leftnav li {
+	list-style: none;
+}
+.main .content {
+	float: left;
+	border: 1px solid #a0a0a0;
+	width: 450px;
+	height: 80%;
+
 }
 .footer {
-  border: 1px solid #a0a0a0;
-  width: 604px;
-  height: 30px;
+	background-color: #614D9D;
+	border: 1px solid #a0a0a0;
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	bottom: 0;
 }
 .footer .rights {
-  text-align: center;
-  color: #a0a0a0;
-  font-size: 5px;
+	text-align: center;
+	color: #fff;
+	font-size: 5px;
 }
+
+.clear {
+	clear: both;
+}
+
