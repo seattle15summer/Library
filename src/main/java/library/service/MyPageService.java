@@ -84,9 +84,9 @@ public class MyPageService extends S2AbstractService<User>{
 	}
 	
 	/**
-	 * 
-	 * @param remindDay
-	 * @param remindMessage
+	 * リマインドメッセージを返すメソッド.
+	 * @param remindDay リマインド日
+	 * @param remindMessage リマインドメッセージ
 	 * @throws ParseException 
 	 */
 	public String getRemindMessage(String remindDay, String returnDay, boolean status) throws ParseException {
@@ -106,7 +106,7 @@ public class MyPageService extends S2AbstractService<User>{
             //今日の日付を取得
             Date today = new Date();
         
-        	//リマインド日近いかつ本返してない
+        	//リマインド日を超えているかつ本返してない
         	if(remindDate.compareTo(today) == -1 && status == true) {
         		remindMessage = "本の期限が迫っています";
         	} else if(returnDate.compareTo(today) == -1 && status == true) {
@@ -115,6 +115,16 @@ public class MyPageService extends S2AbstractService<User>{
         
         	return remindMessage;
         }
+	}
+	
+	/**
+	 * ユーザー情報を消去するメソッド.
+	 * @param user 所虚したいユーザーのエンティティ
+	 */
+	public void deleteUser(User user) {
+		
+		delete(user);
+		
 	}
 	
  }

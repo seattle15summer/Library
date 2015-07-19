@@ -19,7 +19,7 @@
     </div>
     <div class="body">
       <div class="content">
-        <p>自分の情報</p>
+        <h2>自分の情報</h2>
         
         <p>${remindMessage}</p>
         
@@ -28,20 +28,23 @@
         
         <p>${userViewDto.status }</p>
         
-        <p>本を借りた日：${userViewDto.borrowDay}</p>
-        <p>本を返す日：${userViewDto.returnDay}</p>
+        
         
         <c:if test="${!empty userViewDto.bookId}" var="flg" />
 		<c:if test="${flg}">
+		<h2>本の情報</h2>
+		<p>本を借りた日：${userViewDto.borrowDay}</p>
+        <p>本を返す日：${userViewDto.returnDay}</p>
         <p>借りている本</p>
         <p>名前：${bookDto.title}</p>
 		<p>作者：${bookDto.author}</p>
 		<p>カテゴリー：${bookDto.category}</p>
 		<p>出版社：${bookDto.publisher}</p>
 		</c:if>
-		
-        <p>パスワード変更</p>
-        
+		<s:form>
+        <p><input type="submit" name="updatePassword" value="パスワードを変更する"></p>
+        <p><input type="submit" name="deleteConfirm" value="ユーザー情報を消去する"></p>
+        </s:form>
         <p></p>
       </div>
     </div>

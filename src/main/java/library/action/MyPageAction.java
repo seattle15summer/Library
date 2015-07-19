@@ -15,6 +15,7 @@ import library.entity.User;
 import library.service.MyPageService;
 import library.service.BookService;
 
+import org.seasar.framework.aop.annotation.RemoveSession;
 import org.seasar.struts.annotation.Execute;
 
 /**
@@ -46,11 +47,6 @@ public class MyPageAction {
 		
 		Bookinfo bookInfo = new Bookinfo();
 		
-		//まだログインできてないからテスト用に
-		//TODO:テスト終わったら外す
-		userInfoDto.mail = "aaa@gmail.com";
-		userInfoDto.password = "11111111";
-		
 		//DBからユーザー情報を取得
 		user  = myPageService.getUserbyUserInfo(userInfoDto.mail, userInfoDto.password);
 		
@@ -69,8 +65,37 @@ public class MyPageAction {
 		bookService.createBookDto(bookInfo, bookDto);
 		
 		}
-		
         return "index.jsp";
 	}
 	
+	@Execute(validator = false)
+	public String updatePassword() {
+		
+		return "passwordUpdate.jsp";
+	}
+
+	@Execute(validator = false)
+	public String registerPassword() {
+		
+		return "passwordUpdateComplete.jsp";
+	}
+	
+	@Execute(validator = false)
+	public String deleteConfirm() {
+		
+		return "deleteConfirm.jsp";
+	}
+	
+	@RemoveSession(name = "UserInfoDto")
+	@Execute(validator = false)
+	public String deleteUser() {
+		
+		User user = new User();
+		
+		user  = myPageService.getUserbyUserInfo(userInfoDto.mail, userInfoDto.password);
+		
+		myPageService.deleteUser(user);
+		
+		return "deleteComplete.jsp";
+	}
 }
