@@ -75,7 +75,7 @@ public class NewUserRegisterAction {
 		newUserRegisterForm.password     = newUserRegisterDto.password;
 		newUserRegisterForm.mail         = newUserRegisterDto.mail;
 
-		return "registerConfirm.jsp";
+		return "registerInput.jsp";
 	}
 
 	/**
