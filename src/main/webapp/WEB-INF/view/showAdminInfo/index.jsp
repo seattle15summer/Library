@@ -7,19 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <div class="header">
-      <div class="logo">Liberty & Library Admin</div>
-    </div>
-    <div class="leftnav">
-      <ul>
-        <li><a href='${f:url("/newAdminRegister")}'>管理者登録</a></li>
-		<li><a href='${f:url("/showAdminInfo")}'>管理者情報</a></li>
-      </ul>
-    </div>
-    <div class="body">
-    </div>
-    <div class="footer">
-      <div class="rights">
+ <div class="header">
+      <div class="logo">管理者情報表示</div>
+
         <p>All Rights Reserved by Seattle Consulting Team15.</p>
       </div>
     </div>
