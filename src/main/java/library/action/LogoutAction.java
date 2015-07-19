@@ -13,9 +13,19 @@ import org.seasar.struts.annotation.Execute;
 public class LogoutAction {
 	
 	@Execute(validator = false)
+	public String index(){
+		return "index.jsp";
+	}
+	
+	@Execute(validator = false)
 	@RemoveSession(name = "userInfoDto")
 	public String logout() {
 		return "/userLogin?redirect=true";
+	}
+	
+	@Execute(validator = false)
+	public String back(){
+		return "../userPage/index?redirect=true";
 	}
 	
 }

@@ -20,7 +20,8 @@
     <div class="body">
       <div class="content">
         <p>書籍を検索します</p>
-        <input name="searchText"/>
+         タイトル：<input name="searchText" type="text"/>
+        <input type="submit" name="searchBookInf" value="検索">
         <div class="listTable">
           <table border="1">
             <thead>

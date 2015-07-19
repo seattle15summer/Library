@@ -13,7 +13,7 @@
     <div class="leftnav">
       <ul>
         <li> <a href="../">トップ画面</a></li>
-        <li> <a href="../search_book">本の検索</a></li>
+        <li> <a href="../searchBook">本の検索</a></li>
         <li> <a href="">マイページ</a></li>
       </ul>
     </div>

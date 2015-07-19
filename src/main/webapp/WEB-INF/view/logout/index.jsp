@@ -4,22 +4,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <%-- <link rel="stylesheet" type="text/css" href="${f:url('/css/style.css')}"> --%>
-<title>マイページ</title>
+<title>ログアウト</title>
 </head>
 <body>
-    <div class="header">
-      <div class="logo">Liberty & Library</div>
-    </div>
-    <div class="leftnav">
-      <ul>
-        <li> <a href="../">トップ画面</a></li>
-        <li> <a href="../searchBook">本の検索</a></li>
-        <li> <a href="">マイページ</a></li>
-      </ul>
-    </div>
-    <div class="body">
-      <div class="content">
-        <p>ユーザー情報を消去いたしました。</p>
+	<h1>ログアウトしてもよろしいでしょうか</h1>
+		<s:form>
+		<p><input type="submit" name="back" value="戻る"></p>
+        <p><input type="submit" name="logout" value="ログアウト"></p>
+        </s:form>
+        <p></p>
       </div>
     </div>
     <div class="footer">

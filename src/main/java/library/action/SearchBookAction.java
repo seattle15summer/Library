@@ -39,6 +39,7 @@ public class SearchBookAction {
 		return "index.jsp";
 	}
 	
+	/** 検索 */
 	@Execute(validator = false)
 	public String searchBookInf(){
 		

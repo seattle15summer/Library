@@ -11,7 +11,7 @@
 
 <div class="header">
 	<div class="logo">Liberty & Library</div>
-	<div class="logout"><a href "${f:url("logout")}">ログアウト</a></div>
+	<div class="logout"><a href="${f:url("logout")}">ログアウト</a></div>
 </div>
 
 
