@@ -13,14 +13,14 @@
     <div class="leftnav">
       <ul>
         <li> <a href="../">トップ画面</a></li>
-        <li> <a href="">本の検索</a></li>
+        <li> <a href="/">本の検索</a></li>
         <li> <a href="../myPage">マイページ</a></li>
       </ul>
     </div>
     <div class="body">
       <div class="content">
         <p>書籍を検索します</p>
-        <input name="search"/>
+        <input name="searchText"/>
         <div class="listTable">
           <table border="1">
             <thead>
