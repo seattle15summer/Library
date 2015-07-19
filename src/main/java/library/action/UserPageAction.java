@@ -16,4 +16,17 @@ public class UserPageAction {
 	public String index(){
 		return "userPage.jsp";
 	}
+	
+	//myPageに遷移するメソッド
+	@Execute(validator=false)
+	public String myPage(){
+		return "/myPage/index?redirect=true";
+	}
+	
+	//searchBookに遷移するメソッド
+	@Execute(validator=false)
+	public String searchBook(){
+		return "/searchBook/index?redirect=true";
+	}	
+	
 }
