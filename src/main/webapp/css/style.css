@@ -53,32 +53,39 @@ p,a,ul,li,tr,th,button {
 
 .wrapper {
 	width: 100%;
+	padding: 60px 0;
 }
 .main {
-	width: 100%;
+	width: 800px;
 	height: auto;
 	height: 100%;
-	margin: 60px auto 20px auto;
-	background-color: #eeeeee;
+	margin: auto;
+	background-color: #fff;
+	padding: 40px;
 }
 .main .leftnav {
+	background-color: #fff;
 	float: left;
 	border: 1px solid #a0a0a0;
 	width: 150px;
-	height: 100%;
-	margin: 0 auto;
+	height: 450px;
+	margin: 10px 40px 0 40px;
+	margin-top: 10px;
+	margin-right: 40px;
 }
 .main .leftnav li {
 	list-style: none;
 	text-align: center;
-	margin: 3px;
+	margin: 5px;
 }
 .main .content {
+	padding: 20px ;
+	background-color: #fff;
 	float: left;
 	border: 1px solid #a0a0a0;
-	width: 450px;
-	height: 100%;
-	margin: 0 auto;
+	width: 500px;
+	height: 80%;
+	margin: 10px;
 }
 
 /*------------------------------
