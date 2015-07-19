@@ -15,7 +15,7 @@ public class Admin {
 	/** ID */
 	@Id
 	@GeneratedValue
-	public String id;
+	public Integer id;
 
 	/** 名前 */
 	public String name;
