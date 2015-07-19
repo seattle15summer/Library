@@ -3,13 +3,21 @@
  */
 package library.dto;
 
+import java.io.Serializable;
+
+import org.seasar.framework.container.annotation.tiger.Component;
+import org.seasar.framework.container.annotation.tiger.InstanceType;
+
 
 /**
  * @author nagaimidori
  *
  */
-public class UserViewDto {
+@Component(instance = InstanceType.SESSION)
+public class UserViewDto implements Serializable{
 
+	private static final long serialVersionUID = 1L;
+	
 	/**
 	 * ユーザーID
 	 */

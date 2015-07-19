@@ -16,6 +16,7 @@ import org.seasar.extension.jdbc.service.S2AbstractService;
 import org.seasar.extension.jdbc.where.SimpleWhere;
 
 import library.entity.User;
+import library.form.UserInfoForm;
 /**
  * @author nagaimidori
  *
@@ -46,20 +47,21 @@ public class MyPageService extends S2AbstractService<User>{
 		userViewDto.nameKana = user.nameKana;
 		userViewDto.history = user.history;
 		userViewDto.bookId = user.bookId;
-
+		userViewDto.mail = user.mail;
+		userViewDto.userId = user.userId;
+		userViewDto.history = user.history;
+		userViewDto.password = user.password;
+		userViewDto.registerDay = user.registerDay;
+		userViewDto.remindDay = user.registerDay;
+		userViewDto.returnDay = user.returnDay;
+		if(user.status == true) {
+			userViewDto.status = "1";
+		} else {
+			userViewDto.status = "2";
+		}
+		
 	    userViewDto.status = setStatus(user.status);
-	    //本を借りていない場合,「ー」を表示
-	    if(user.borrowDay == null) {
-	    	userViewDto.borrowDay = "ー";
-	    } else {
-	    	userViewDto.borrowDay = user.borrowDay;
-	    }
-	    
-	    if(user.returnDay == null) {
-	    	userViewDto.returnDay = "ー";
-	    } else {
-	    	userViewDto.returnDay = user.returnDay;
-	    }
+	   
 	   
 	}
 	
@@ -132,9 +134,52 @@ public class MyPageService extends S2AbstractService<User>{
 	 */
 	public void deleteUser(User user) {
 		
-		delete(user);
-		
+		delete(user);	
 	}
 	
+	/**
+	 * ユーザー情報を更新するメオソッド.
+	 * @param user
+	 */
+	public void updateUser(UserViewDto userViewDto) {
+
+		User user = new User();
+		
+		user.name = userViewDto.name;
+		user.nameKana = userViewDto.nameKana;
+		user.history = userViewDto.history ;
+		user.bookId = userViewDto.bookId;
+		user.mail = userViewDto.mail;
+		user.userId = userViewDto.userId;
+		user.history = userViewDto.history;
+		user.password = userViewDto.password;
+		user.registerDay = userViewDto.registerDay;
+		user.registerDay = userViewDto.remindDay;
+		userViewDto.returnDay = user.returnDay;
+		if(userViewDto.status == "本を借りています") {
+			user.status = true;
+		} else {
+			user.status = false;
+		}
+		
+		update(user);
+		
+	}
+	/**
+	 * DtoをもとにFormの初期値をセットするメソッド.
+	 * @param userInfoDto
+	 * @param userInfoForm
+	 */
+	public void setFormValue(UserViewDto userViewDto, UserInfoForm userInfoForm) {
+		userInfoForm.name = userViewDto.name;
+		userInfoForm.nameKana = userViewDto.nameKana;
+		userInfoForm.mail = userViewDto.mail;
+	}
+	
+	public void dataDtoToForm(UserViewDto userViewDto, UserInfoForm userInfoForm) {
+		userViewDto.name = userInfoForm.name;
+		userViewDto.nameKana = userInfoForm.nameKana;
+		userViewDto.mail = userInfoForm.mail;
+	}
  }
 	

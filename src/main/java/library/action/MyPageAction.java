@@ -42,6 +42,7 @@ public class MyPageAction {
 	public UserInfoDto userInfoDto;
 	
 	@ActionForm
+	@Resource 
 	public UserInfoForm userInfoForm;
 	
 	public String errorMessage;
@@ -93,7 +94,7 @@ public class MyPageAction {
 	public String registerPassword() {
 		
 		if(userInfoForm.currentPassword.equals(userInfoDto.password) 
-				&& userInfoForm.currentPassword.equals(userInfoForm.currentConfirmPassword)){
+				&& userInfoForm.newPassword.equals(userInfoForm.newConfirmPassword)){
 			
 			User user = new User();
 			
@@ -107,7 +108,7 @@ public class MyPageAction {
 		} else if(!userInfoForm.currentPassword.equals(userInfoDto.password)){
 			errorMessage = "現在のパスワードが違います";
 			return "passwordUpdate.jsp";
-		} else if(!userInfoForm.currentPassword.equals(userInfoForm.currentConfirmPassword)) {
+		} else if(!userInfoForm.currentPassword.equals(userInfoForm.newConfirmPassword)) {
 			errorMessage = "確認用のパスワードが一致しません";
 			return "passwordUpdate.jsp";
 		} else {
@@ -132,7 +133,7 @@ public class MyPageAction {
 	 * @return
 	 */
 	@RemoveSession(name = "UserInfoDto")
-	@Execute(validator = false)
+	@Execute(validator = true, input = "resisterInput.jsp")
 	public String deleteUser() {
 		
 		User user = new User();
@@ -145,4 +146,41 @@ public class MyPageAction {
 		
 		return "deleteComplete.jsp";
 	}
+		
+	@Execute(validator = false)
+	public String userUpdate() {
+		
+		User user = new User();
+		
+		//DBからユーザー情報を取得
+		user  = myPageService.getUserbyUserInfo(userInfoDto.mail, userInfoDto.password);
+				
+		//取得したユーザー情報をもとに表示用のDtoを作成
+		myPageService.createUserViewDto(user,userViewDto);
+
+		return "userUpdate.jsp";
+		
+	}
+	
+	@Execute(validator = false)
+	public String UpdateConfirm() {
+		
+		myPageService.dataDtoToForm(userViewDto,userInfoForm);
+		
+		return "updateConfirm.jsp";
+	}
+	
+	@Execute(validator = false)
+	public String UpdateComplete() {
+	
+		//ユーザー情報更新メソッドを追加
+		myPageService.updateUser(userViewDto);
+		
+		userInfoDto.mail = userViewDto.mail;
+		userInfoDto.password = userViewDto.password;
+		
+		return "updateComplete.jsp";
+	}
+	
+	
 }
