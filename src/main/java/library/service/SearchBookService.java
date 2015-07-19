@@ -93,7 +93,7 @@ public class SearchBookService extends S2AbstractService<Bookinfo> {
 			BookDto bookDisp = new BookDto(
 					bookInfo.bookId, bookInfo.title,
 					bookInfo.author, bookInfo.category,
-					bookInfo.publisher, bookInfo.storage, bookInfo.status);
+					bookInfo.publisher, bookInfo.storage);
 			searchBookInfoDto.bookInfoDtos.add(bookDisp);
 		}
 
