@@ -11,6 +11,7 @@
 
 <div class="header">
 	<div class="logo">Liberty & Library</div>
+	<div class="logout">ログアウト</div>
 </div>
 
 <div class="clear"></div>
@@ -20,8 +21,8 @@
 		<div class="leftnav">
 		<ul>
 			<li> <a href="">トップ画面</a></li>
-			<li> <a href="search_book">本の検索</a></li>
-			<li> <a href="myPage">マイページ</a></li>
+			<li> <a href="${f:url("searchBook")}">本の検索</a></li>
+			<li> <a href="${f:url("myPage")}">マイページ</a></li>
 		</ul>
 		</div>
 		<div class="content">
@@ -33,7 +34,7 @@
 
 <div class="footer">
 	<div class="rights">
-		<p>All Rights Reserved by Seattle Consulting Team15.</p>
+		<p>All Rights Reserved by <a href link="http://www.seattleconsulting.co.jp/">Seattle Consulting</a> Team15.</p>
 	</div>
 </div>
 </body>
