@@ -21,6 +21,7 @@ public class IndexAction {
 	
     @Execute(validator = false)
 	public String index() {
+    	System.out.println("yeahhhhhhh");
         return "index.jsp";
 	}
 }

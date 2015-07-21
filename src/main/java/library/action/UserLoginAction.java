@@ -44,10 +44,13 @@ public class UserLoginAction {
 	 */
 	@Execute(validator = false, input = "index?redirect=true", removeActionForm=true)
 	public String judgeLogin(){
-		userInfoDto.mail      = userLoginForm.mail;
-		userInfoDto.password  = userLoginForm.password;
-		if(userLoginService.isUserExist(userInfoDto.mail, userInfoDto.password)){
-			return "";
+		
+		if(userLoginService.isUserExist(userLoginForm.mail, userLoginForm.password)){
+			
+			userInfoDto.mail = userLoginForm.mail;
+			userInfoDto.password = userLoginForm.password;
+			
+			return "/userPage/index?redirect=true";
 		}
 		return "index.jsp";
 	}

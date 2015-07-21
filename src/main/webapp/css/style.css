@@ -1,45 +1,113 @@
 @CHARSET "UTF-8";
 
-@CHARSET "UTF-8";
+/*------------------------------
+// 初期化
+//------------------------------ */
+
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+body {
+  background-color: #e0e0e0;
+}
+p,a,ul,li,tr,th,button {
+  text-decoration: none;
+  color: #2090e0;
+  margin: 0;
+  padding: 0;
+}
+.clear {
+	clear: both;
+}
+
+/*------------------------------
+// header
+//------------------------------ */
 
 .header {
-  border: 1px solid #a0a0a0;
-  width: 604px;
-  height: 35px;
+	background-color: #614D9D;	
+	/* border: 1px solid ; */
+	width: 100%;
+	height: 40px;
+	position: absolute;
+	top: 0px;
 }
 .header .logo {
-  margin: 5px;
-  font: 25px Helvetica;
-  color: #a0a0a0;
-  text-align: center;
+	font: 25px Helvetica;
+	color: #eee;
+	width: 190px;
+	margin: 5px auto;
 }
-.body {
-  border: 1px solid #a0a0a0;
-  width: 604px;
-  height: 600px;
+.header .logout {
+	font: 12px Helvetica;
+	color: #000;
+	margin: 2px;
+	float: right;
+	width: 60px;
+	border-bottom: 1px dashed #2090e0;
 }
-.body .leftnav {
-  float: left;
-  border: 1px solid #a0a0a0;
-  width: 150px;
-  height: 600px;
+
+/*------------------------------
+// main
+//------------------------------ */
+
+.wrapper {
+	width: 100%;
+	height: 100%;
+	padding: 60px 0;
 }
-.body .leftnav li {
-  list-style: none;
+.main {
+	width: 740px;
+	height: auto;
+	height: 100%;
+	margin: auto;
+	background-color: #fff;
+	padding: 20px;
 }
-.body .content {
-  float: left;
-  border: 1px solid #a0a0a0;
-  width: 450px;
-  height: 600px;
+.main .leftnav {
+	background-color: #fff;
+	float: left;
+	/* border: 1px solid #a0a0a0; */
+	width: 150px;
+	height: 450px;
+	margin: 10px 20px 0 40xp;
+	margin-top: 10px;
+	margin-right: 20px;
+	background-color: #fffff0;
 }
+.main .leftnav li {
+	list-style: none;
+	text-align: center;
+	margin: 8px;
+	border-bottom: 1px dotted #333;
+}
+.main .content {
+	padding: 20px ;
+	background-color: #fff;
+	float: left;
+	/* border: 1px solid #a0a0a0; */
+	width: 500px;
+	height: 80%;
+	margin: 10px;
+	background-color: #fffff0;
+}
+
+/*------------------------------
+// footer 
+//------------------------------ */
+
 .footer {
-  border: 1px solid #a0a0a0;
-  width: 604px;
-  height: 30px;
+	background-color: #614D9D;
+	border: 1px solid #a0a0a0;
+	width: 100%;
+	height: 100px;
+	bottom: 0;
 }
-.footer .rights {
-  text-align: center;
-  color: #a0a0a0;
-  font-size: 5px;
+.footer .rights p{
+	text-align: center;
+	color: #fff;
+	font-size: 5px;
 }
+

@@ -7,6 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+ <div class="header">
+      <div class="logo">管理者情報表示</div>
+<p>名前:${adminViewDto.name}</p>
+<p>名前（カナ）:${adminViewDto.nameKana}</p>
+<p>メールアドレス:${adminViewDto.mail}</p>
+<p>パスワード:******** </p>
+        <p>All Rights Reserved by Seattle Consulting Team15.</p>
+      </div>
+    </div>
 </body>
 </html>
