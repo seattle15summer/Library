@@ -42,6 +42,19 @@ public class SearchBookAction {
 	public String index(){
 		return "index.jsp";
 	}
+
+	@Execute(validator = false)
+	public String userPage(){
+		return "/userPage/index?redirect=true";
+	}
+	
+	@Execute(validator = false)
+	public String myPage(){
+		return "/myPage/index?redirect=true";
+	}
+	
+	
+	
 	
 	/** 検索 */
 	@Execute(validator = false)
@@ -63,5 +76,6 @@ public class SearchBookAction {
 		bookDto = searchBookService.searchBookInfo(searchBookForm.searchText);
 		return "list.jsp";
 	}
+	
 	
 }
