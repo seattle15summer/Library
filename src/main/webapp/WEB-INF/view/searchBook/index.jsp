@@ -17,9 +17,9 @@
 		<div class="main">
     		<div class="leftnav">
 		      <ul>
-		        <li> <a href="../">トップ画面</a></li>
-		        <li> <a href="/">本の検索</a></li>
-		        <li> <a href="../myPage">マイページ</a></li>
+		        <li> <a href="${f:url("userPage")}">トップ画面</a></li>
+		        <li> <a href="${f:url("index")}">本の検索</a></li>
+		        <li> <a href="${f:url("myPage")}">マイページ</a></li>
 		      </ul>
 		    </div>
 
