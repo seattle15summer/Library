@@ -22,7 +22,7 @@
 	-->
 	
 	<!-- for H2 -->
-	<component name="xaDataSource"
+<!--	<component name="xaDataSource"
 		class="org.seasar.extension.dbcp.impl.XADataSourceImpl">
 		<property name="driverClassName">
 			"org.h2.Driver"
@@ -36,7 +36,7 @@
 			@org.seasar.framework.util.DriverManagerUtil@deregisterAllDrivers()
 		</destroyMethod>
 	</component>
-	
+-->
 	<!-- for Oracle -->
 	<!--
 	<component name="xaDataSource"
@@ -112,18 +112,17 @@
 	- 上記以外の場合は，my.cnfでdefault-character-setの設定を適切に
 		(cp932やutf8など．デフォルトのlatin1は不可)行なっていれば，
 		文字化けは防げます．
-	<component name="xaDataSource"
+-->	<component name="xaDataSource"
 		class="org.seasar.extension.dbcp.impl.XADataSourceImpl">
 		<property name="driverClassName">
 			"com.mysql.jdbc.Driver"
 		</property>
 		<property name="URL">
-			"jdbc:mysql://localhost:3306/test"
+			"jdbc:mysql://localhost:3306/library"
 		</property>
-		<property name="user">"xxx"</property>
-		<property name="password">"xxx"</property>
+		<property name="user">"root"</property>
+		<property name="password">"masa0127"</property>
 	</component>
-	-->
 
 	<!-- for SQLServer -->
 	<!--

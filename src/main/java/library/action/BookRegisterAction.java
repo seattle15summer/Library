@@ -18,7 +18,6 @@ import org.seasar.struts.annotation.Execute;
  */
 public class BookRegisterAction {
 	
-	
 	@ActionForm
 	@Resource
 	public BookRegisterForm bookRegisterForm;

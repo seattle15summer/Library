@@ -40,7 +40,7 @@ public class SearchBookAction {
 	
 	@Execute(validator = false)
 	public String index(){
-		return "index.jsp";
+		return "searchBook.jsp";
 	}
 
 	@Execute(validator = false)
@@ -52,9 +52,6 @@ public class SearchBookAction {
 	public String myPage(){
 		return "/myPage/index?redirect=true";
 	}
-	
-	
-	
 	
 	/** 検索 */
 	@Execute(validator = false)
