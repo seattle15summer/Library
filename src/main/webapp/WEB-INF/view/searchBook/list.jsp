@@ -12,8 +12,8 @@
     </div>
     <div class="leftnav">
       <ul>
-        <li> <a href="../">トップ画面</a></li>
-        <li> <a href="/searchBook">本の検索</a></li>
+        <li> <a href="../userPage">トップ画面</a></li>
+        <li> <a href="../searchBook">本の検索</a></li>
         <li> <a href="../myPage">マイページ</a></li>
       </ul>
     </div>
@@ -29,6 +29,7 @@
                 <th>分類</th>
                 <th>出版社</th>
                 <th>在庫</th>
+              　<th>貸し出し状況</th>
               </tr>
               <c:forEach var="bookList" items="${bookDto.bookInfoDtos}">
               <tr>
@@ -37,6 +38,10 @@
                  <td>${bookList.category}</td>
                  <td>${bookList.publisher}</td>
                  <td>${bookList.storage}</td>
+                <%-- <c:if test="${bookList.status = 0}">
+                 <td><input type="submit" name="request" value="借りる"></td> --%>
+                 <td>${bookList.status}</td>
+                <%-- </c:if> --%>
               </tr>
               </c:forEach>
             </thead>

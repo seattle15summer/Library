@@ -13,13 +13,14 @@ import java.util.List;
 public class BookDto {
 	
 	public BookDto(Integer bookId, String title, String author,
-			String category, String publisher, Integer storage) {
+			String category, String publisher, Integer storage, Boolean status) {
 		this.bookId = bookId;
 		this.title = title;
 		this.author = author;
 		this.category = category;
 		this.publisher = publisher;
 		this.storage = storage;
+		this.status = status;
 	}
 
 	public BookDto() {

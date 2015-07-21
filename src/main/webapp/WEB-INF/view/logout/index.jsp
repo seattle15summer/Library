@@ -13,8 +13,6 @@
         <p><input type="submit" name="logout" value="ログアウト"></p>
         </s:form>
         <p></p>
-      </div>
-    </div>
     <div class="footer">
       <div class="rights">
         <p>All Rights Reserved by Seattle Consulting Team15.</p>
