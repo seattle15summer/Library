@@ -27,6 +27,8 @@
 	      <ul>
 	        <li><a href='${f:url("/newAdminRegister")}'>管理者登録</a></li>
 			<li><a href='${f:url("/showAdminInfo")}'>管理者情報</a></li>
+			<li><a href='${f:url("/bookRegister")}'>本の登録</a></li>
+			<li><a href='${f:url("/newUserRegister")}'>利用者の登録</a></li>
 	      </ul>
 	    </div>
 	 	   <div class="content">

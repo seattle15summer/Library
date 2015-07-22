@@ -3,20 +3,32 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<%-- <link rel="stylesheet" type="text/css" href="${f:url('/css/style.css')}"> --%>
+<link rel="stylesheet" type="text/css" href="${f:url('/css/style.css')}"> 
 <title>ログアウト</title>
 </head>
+
 <body>
-	<h1>ログアウトしてもよろしいでしょうか</h1>
-		<s:form>
-		<p><input type="submit" name="back" value="戻る"></p>
-        <p><input type="submit" name="logout" value="ログアウト"></p>
-        </s:form>
-        <p></p>
-    <div class="footer">
-      <div class="rights">
-        <p>All Rights Reserved by Seattle Consulting Team15.</p>
-      </div>
-    </div>
-  </body>
+
+<div class="header">
+	<div class="logo">Liberty & Library</div>
+</div>
+
+<div class="wrapper">
+	<div class="main">
+		<div class="content">
+			<p>ログアウトしますか？</p>
+			<s:form>
+				<input type="submit" name="back" value="戻る">
+		        <input type="submit" name="logout" value="ログアウト">
+	        </s:form>
+        </div>
+	</div>
+</div>
+        
+	<div class="footer">
+	  <div class="rights">
+	    <p>All Rights Reserved by Seattle Consulting Team15.</p>
+	  </div>
+	</div>
+</body>
 </html>

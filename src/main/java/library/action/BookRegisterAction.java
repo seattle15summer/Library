@@ -50,7 +50,7 @@ public class BookRegisterAction {
 	@Execute(validator = false)
 	@RemoveSession(name = "BookDto")
 	public String registerComplete(){
-		return "bookRegisterComplite.jsp";
+		return "bookRegisterComplete.jsp";
 	}
 	
 	/**
