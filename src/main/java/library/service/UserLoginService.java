@@ -12,14 +12,14 @@ public class UserLoginService extends S2AbstractService<User> {
 	
 	/** ユーザーの有無判定 */
 	public boolean isUserExist(String mail, String password) {
-		UserInfoDto userInfoDto = getUserInfoDto(mail);
+		UserInfoDto userInfoDto = getUserInfoDto(mail, password);
 		return (mail.equals(userInfoDto.mail) && password.equals(userInfoDto.password));
 	}
 	
 	/** db からユーザーを取得する */
-	private UserInfoDto getUserInfoDto(String mail) {
+	private UserInfoDto getUserInfoDto(String mail, String password) {
 		
-		User userEntity = select().where(new SimpleWhere().eq("mail", mail)).getSingleResult();
+		User userEntity = select().where(new SimpleWhere().eq("mail", mail), new SimpleWhere().eq("password", password)).getSingleResult();
 		if (userEntity == null){
 			UserInfoDto illegalUserDto = new UserInfoDto();
 			illegalUserDto.mail = "illegal";

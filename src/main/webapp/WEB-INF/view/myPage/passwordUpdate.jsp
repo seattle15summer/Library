@@ -24,13 +24,13 @@
         <p>${errorMessage }</p>
         <table>
         	<tr>
-        		<td>新しいパスワード：</td><td><input type=password name="newPassword" required/></td>
-        	</tr>
-        	<tr>
         		<td>現在のパスワード：</td><td><input type=password name="currentPassword" required/></td>
         	</tr>
         	<tr>
-        		<td>現在のパスワード(確認用)：</td><td><input type=password name="currentConfirmPassword" required/></td>
+        		<td>新しいパスワード：</td><td><input type=password name="newPassword" required/></td>
+        	</tr>
+        	<tr>
+        		<td>新しいパスワード(確認用)：</td><td><input type=password name="newConfirmPassword" required/></td>
         	</tr>
         </table>
         <input type="submit" name="registerPassword" value="新しいパスワードを登録">

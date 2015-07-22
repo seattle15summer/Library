@@ -73,7 +73,7 @@ public class MyPageAction {
 		bookService.createBookDto(bookInfo, bookDto);
 		
 		}
-        return "index.jsp";
+        return "profileDetail.jsp";
 	}
 	
 	/**
@@ -93,27 +93,42 @@ public class MyPageAction {
 	@Execute(validator = false)
 	public String registerPassword() {
 		
-		if(userInfoForm.currentPassword.equals(userInfoDto.password) 
-				&& userInfoForm.newPassword.equals(userInfoForm.newConfirmPassword)){
-			
-			User user = new User();
-			
-			//現在ログインしているユーザー情報をエンティティに格納
-			user  = myPageService.getUserbyUserInfo(userInfoDto.mail, userInfoDto.password);
-			
-			myPageService.userupdatePassword(user,userInfoDto,userInfoForm.newPassword);
-			
-			return "passwordUpdateComplete.jsp";
-			
-		} else if(!userInfoForm.currentPassword.equals(userInfoDto.password)){
-			errorMessage = "現在のパスワードが違います";
+		if(!userInfoForm.currentPassword.equals(userInfoDto.password)){
+			errorMessage = "現在のパスワードが違っています";
 			return "passwordUpdate.jsp";
-		} else if(!userInfoForm.currentPassword.equals(userInfoForm.newConfirmPassword)) {
-			errorMessage = "確認用のパスワードが一致しません";
+		}else if(!userInfoForm.newPassword.equals(userInfoForm.newConfirmPassword)){
+			errorMessage = "パスワードが一致しません。";
 			return "passwordUpdate.jsp";
-		} else {
+		}else if(userInfoDto.password.equals(userInfoForm.newPassword)){
+			errorMessage = "現在と異なるパスワードを入力してください";
 			return "passwordUpdate.jsp";
 		}
+		
+		
+		
+		return "passwordUpdateComplete.jsp";
+		
+//		if(userInfoForm.currentPassword.equals(userInfoDto.password) 
+//				&& userInfoForm.newPassword.equals(userInfoForm.newConfirmPassword)){
+//			
+//			User user = new User();
+//			
+//			//現在ログインしているユーザー情報をエンティティに格納
+//			user  = myPageService.getUserbyUserInfo(userInfoDto.mail, userInfoDto.password);
+//			
+//			myPageService.userupdatePassword(user,userInfoDto,userInfoForm.newPassword);
+//			
+//			return "passwordUpdateComplete.jsp";
+//			
+//		} else if(!userInfoForm.currentPassword.equals(userInfoDto.password)){
+//			errorMessage = "現在のパスワードが違います";
+//			return "passwordUpdate.jsp";
+//		} else if(!userInfoForm.newPassword.equals(userInfoForm.newConfirmPassword)) {
+//			errorMessage = "確認用のパスワードが一致しません";
+//			return "passwordUpdate.jsp";
+//		} else {
+//			return "passwordUpdate.jsp";
+//		}
 		
 	}
 	

@@ -4,7 +4,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href='../css/style.css'>
->>>>>>> develop
 <title>マイページ</title>
 </head>
 <body>
@@ -15,7 +14,6 @@
       <ul>
         <li> <a href="../userPage">トップ画面</a></li>
         <li> <a href="../searchBook">本の検索</a></li>
->>>>>>> develop
         <li> <a href="">マイページ</a></li>
       </ul>
     </div>
@@ -26,8 +24,7 @@
         <p>${remindMessage}</p>
         
         <p>名前：${userViewDto.name}</p>
-        <p>ふりがな：${userViewDto.nameKana}
-        
+        <p>フリガナ：${userViewDto.nameKana}</p>   
         <p>${userViewDto.status }</p>
         
         
@@ -48,7 +45,6 @@
         <p><input type="submit" name="deleteConfirm" value="ユーザー情報を消去する"></p>
         </s:form>
         <p></p>
->>>>>>> develop
       </div>
     </div>
     <div class="footer">

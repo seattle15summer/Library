@@ -110,9 +110,9 @@ public class MyPageService extends S2AbstractService<User>{
             Date today = new Date();
         
         	//リマインド日を超えているかつ本返してない
-        	if(remindDate.compareTo(today) == -1 && status == true) {
+        	if(remindDate.compareTo(today) > -1 && status == true) {
         		remindMessage = "本の期限が迫っています";
-        	} else if(returnDate.compareTo(today) == -1 && status == true) {
+        	} else if(returnDate.compareTo(today) > -1 && status == true) {
         		remindMessage = "本の締め切りが過ぎています";
         	} 
         
