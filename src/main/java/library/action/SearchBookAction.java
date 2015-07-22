@@ -30,7 +30,7 @@ public class SearchBookAction {
 	public BookDto bookDto;
 	
 	//前のページがあるか
-	public boolean hasNext = false;
+	public boolean hasNext = true;
 
 	//次のページがあるか
 	public boolean hasPrev = false;
