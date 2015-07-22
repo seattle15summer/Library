@@ -1,0 +1,86 @@
+/*------------------------------
+// èâä˙âª
+//------------------------------ */
+
+html, body {
+	height: 100%;
+	margin: 0;
+}
+body {
+  background-color: #e0e0e0;
+}
+p,a,ul,li,tr,th,button {
+  text-decoration: none;
+  color: #614D9D;
+  margin: 0;
+  padding: 0;
+}
+.clear {
+	clear: both;
+}
+
+/*------------------------------
+// 
+//------------------------------ */
+
+
+.wrapper {
+  width: 100%;
+}
+.wrapper .login_wrapper {
+  border: 1px solid #2E2E2E;
+  width: 300px;
+  height: 150px;
+  margin: 50px auto;
+}
+.wrapper .login_wrapper .title {
+  border: 1px solid #2E2E2E;
+  background-color: #2E2E2E;
+  width: 300px;
+  height: 27px;
+  color: #909090;
+  text-align: center;
+}
+.wrapper .login_wrapper .title a {
+	color: #ffffff;
+}
+.wrapper .login_wrapper .login_form {
+  border: 1px solid #2E2E2E;
+  width: 300px;
+  height: 120px;
+}
+.wrapper .login_wrapper .login_form .form_wrapper {
+  width: 300px;
+  height: 80px;
+}
+.wrapper .login_wrapper .login_form .form_wrapper .id_form {
+  margin: 20px 20px 10px 30px;
+  float: left;
+}
+.wrapper .login_wrapper .login_form .form_wrapper .id_form .form_item {
+  width: 80px;
+  height: 20px;
+  float: left;
+}
+.wrapper .login_wrapper .login_form .form_wrapper .pass_form {
+  margin: 0 20px 20px 30px;
+  float: left;
+}
+.wrapper .login_wrapper .login_form .form_wrapper .pass_form .form_item {
+  width: 80px;
+  height: 20px;
+  float: left;
+}
+.wrapper .login_wrapper .login_form .login_btn {
+  text-align: center;
+  padding: 0;
+}
+.wrapper .login_wrapper .login_form .login_btn #login_btn {
+  width: 80px;
+  height: 10px;
+  padding: 0;
+}
+
+.footer {
+	position: absolute;
+}

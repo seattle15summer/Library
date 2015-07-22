@@ -4,54 +4,75 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href='../css/adminStyle.css'>
 <title>管理者登録確認</title>
 </head>
+
 <body>
-<div align="center">
+
+<div class="header">
+	<div class="logo">Liberty & Library</div>
+	<div class="logout"><a href="${f:url("/adminLogout")}">ログアウト</a></div>
+</div>
+
+<%-- <div align="center">
 <h1>管理者登録確認</h1>
 </div>
 <html:errors/>
-<div align="center">
-  <table>
-    <tr>
-      <td>
-        ●名前
-      </td>
-      <td>
-        ${f:h(newAdminRegisterDto.name)}
-      </td>
-    </tr>
-    <tr>
-      <td>
-        ●フリガナ
-      </td>
-      <td>
-        ${f:h(newAdminRegisterDto.nameKana)}
-      </td>
-    </tr>
-    <tr>
-      <td>
-        ●パスワード
-      </td>
-      <td>
-        ${f:h(newAdminRegisterDto.password)}
-      </td>
-    </tr>
-    <tr>
-      <td>
-        ●メール
-      </td>
-      <td>
-        ${f:h(newAdminRegisterDto.mail)}
-      </td>
-    </tr>
-  </table>
-  </div>
-<s:form>
-  <div align="center">
-    <input type="submit" name="backToIndex" value="戻る">
-    <input type="submit" name="adminRegisterCompleted" value="登録">
-  </div>
-</s:form>
+ --%>
+<div class="wrapper">
+	<div class="main">
+	    <div class="leftnav">
+	      <ul>
+	        <li><a href='${f:url("/newAdminRegister")}'>管理者登録</a></li>
+			<li><a href='${f:url("/showAdminInfo")}'>管理者情報</a></li>
+	      </ul>
+	    </div>
+	 	   <div class="content">
+
+			  <table>
+			    <tr>
+			      <td>
+			        ●名前
+			      </td>
+			      <td>
+			        ${f:h(newAdminRegisterDto.name)}
+			      </td>
+			    </tr>
+			    <tr>
+			      <td>
+			        ●フリガナ
+			      </td>
+			      <td>
+			        ${f:h(newAdminRegisterDto.nameKana)}
+			      </td>
+			    </tr>
+			    <tr>
+			      <td>
+			        ●パスワード
+			      </td>
+			      <td>
+			        ${f:h(newAdminRegisterDto.password)}
+			      </td>
+			    </tr>
+			    <tr>
+			      <td>
+			        ●メール
+			      </td>
+			      <td>
+			        ${f:h(newAdminRegisterDto.mail)}
+			      </td>
+			    </tr>
+			  </table>
+			<s:form>
+				<div align="center">
+				  <input type="submit" name="backToIndex" value="戻る">
+				  <input type="submit" name="adminRegisterCompleted" value="登録">
+				</div>
+			</s:form>
+		  </div>
+	</div>
+</div>
+
 </body>
 </html>
