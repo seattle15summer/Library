@@ -81,7 +81,7 @@ public class NewUserRegisterAction {
 	//トップページを表示するメソッド
 	@Execute(validator=false)
 	public String goTop(){
-		return "/userPage/index?redirect=true";
+		return "/adminTop/index?redirect=true";
 	}
 
 	/**
