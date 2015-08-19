@@ -3,12 +3,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<%-- <link rel="stylesheet" type="text/css" href="${f:url('/css/style.css')}"> --%>
+<link rel="stylesheet" type="text/css" href="${f:url('/css/style.css')}">
 <title>マイページ</title>
 </head>
 <body>
     <div class="header">
       <div class="logo">Liberty & Library</div>
+      <div class="logout"><a href="${f:url("/logout")}">ログアウト</a></div>
     </div>
     <div class="leftnav">
       <ul>
